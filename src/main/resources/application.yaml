@@ -1,0 +1,21 @@
+server:
+  port : 8080
+
+spring:
+  application:
+    name: login-project
+  profiles:
+    active: test
+
+
+# mybatis-plus配置
+mybatis-plus:
+  configuration: # mybatis-plus配置控制台打印完整带参数SQL语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.example.loginproject.data.entity
+  mapper-locations: mapper/**/**.xml
+
+# 日志配置
+logging:
+  file.path: logs/${spring.application.name}
+  config: classpath:logback-spring.xml
